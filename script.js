@@ -4,10 +4,9 @@ const nextBtn = document.getElementById("nextSlide");
 const music = document.getElementById("backgroundMusic");
 const flowerContainer = document.querySelector(".flowers-container");
 
-const message = "Selamat Datang di Halaman Kami!";
+const message = "HELLO WORLD";
 const delay = 100;
 
-// Buat animasi teks per huruf dengan efek neon blink
 message.split("").forEach((char, index) => {
   const span = document.createElement("span");
   span.textContent = char;
