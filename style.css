@@ -1,9 +1,9 @@
-/* style.css */
-
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+  background: #111;
+  color: white;
 }
 
 .slide {
@@ -25,11 +25,33 @@ body {
   opacity: 0;
   display: inline-block;
   transition: opacity 0.3s ease;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+  animation: neonBlink 2s infinite;
 }
 
 #animatedText span.visible {
   opacity: 1;
-  color: #0ff;
+  animation-play-state: running;
+}
+
+@keyframes neonBlink {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: none;
+    opacity: 0.6;
+  }
 }
 
 .controls {
@@ -41,12 +63,25 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #0ff;
+  color: #111;
+  font-weight: bold;
+  box-shadow:
+    0 0 10px #0ff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #33ffff;
 }
 
 .slide2 {
   background: linear-gradient(to top, #f0f8ff, #fff);
   overflow: hidden;
   position: relative;
+  color: #111;
 }
 
 .flowers-container {
@@ -55,6 +90,7 @@ button {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: visible;
 }
 
 .flower {
@@ -63,16 +99,22 @@ button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  animation: floatUp 6s ease-in infinite;
+  animation: floatUp 6s ease-in forwards;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
 }
 
 @keyframes floatUp {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50vh) rotate(15deg) scale(1.1);
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) scale(1.2);
+    transform: translateY(-100vh) rotate(-15deg) scale(1.2);
     opacity: 0;
   }
 }
