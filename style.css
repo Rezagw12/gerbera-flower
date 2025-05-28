@@ -1,0 +1,78 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.slide {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.slide1 {
+  background: #111;
+  color: white;
+}
+
+#animatedText span {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+#animatedText span.visible {
+  opacity: 1;
+  color: #0ff;
+}
+
+.controls {
+  margin-top: 2rem;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.slide2 {
+  background: linear-gradient(to top, #f0f8ff, #fff);
+  overflow: hidden;
+  position: relative;
+}
+
+.flowers-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flower {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  background: url('flower.png') no-repeat center center / contain;
+  animation: floatUp 6s ease-in infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
