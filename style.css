@@ -60,9 +60,9 @@ button {
 .flower {
   position: absolute;
   bottom: 0;
-  width: 40px;
-  height: 40px;
-  background: url('flower.png') no-repeat center center / contain;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   animation: floatUp 6s ease-in infinite;
 }
 
